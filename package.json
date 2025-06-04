@@ -1,0 +1,18 @@
+{
+  "name": "jquery-tableinlineedit",
+  "version": "1.0.0",
+  "description": "jQuery Plugin for inline table editing",
+  "main": "jquery.tableInlineEdit.min.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "jquery": "^3.7.1",
+    "jsdom": "^26.1.0"
+  }
+}
