@@ -137,24 +137,18 @@ jQuery.fn.extend({
         	        this.ajaxSave(id, method, row_data);
 	        	}
     	    },
-    	    ajaxSave : function(id, method, data){
-        	    var _self = this;
-        	    
-    	        var send_data = {
-	        	    id        : id,
-	        	    method    : method,
-	        	    data      : data
-    	        };
+            ajaxSave : function(id, method, data){
+                var send_data = {
+                            id        : id,
+                            method    : method,
+                            data      : data
+                };
 
-    	        send_data.data = $.extend(send_data.data, this.props.serverSide.extraData);
+                send_data.data = $.extend(send_data.data, this.props.serverSide.extraData);
 
-    	        var retVal = null;
-    	        $.post(this.props.serverSide.saveUrl, send_data).done(function(result){
-    	        	retVal = result;
-    	        });
-    	        
-    	        return retVal;
-    	    },
+                // Return jqXHR promise to allow callers to handle async result
+                return $.post(this.props.serverSide.saveUrl, send_data);
+            },
     	    toggleEdit : function(row, toggle){
     	        if(toggle){
         	        row.find(this.props.controls.editRow).hide();
